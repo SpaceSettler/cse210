@@ -1,23 +1,24 @@
-using System;
 
-public class EternalGoal : Goal
+class EternalGoal : Goal
 {
 
     public EternalGoal(string name, string description, string points) : base(name, description, points)
     {
-
+        _shortName = name;
+        _description = description;
+        _points = points;
     }
 
-    public void RecordEvent()
+    public override int RecordEvent()
     {
-
+        return Int32.Parse(_points);
     }
-    public bool IsComplete()
+    public override bool IsComplete()
     {
-        return _isComplete;
+        return false;
     }
-    public string GetStringRep()
+    public override string GetStringRep()
     {
-
+        return $"2,{_shortName},{_description},{_points}";
     }
 }
