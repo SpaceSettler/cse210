@@ -18,8 +18,4 @@ public class Cycling : Activity
     {
         return _speed;
     }
-    public override double Pace()
-    {
-        return _length / Distance();
-    }
 }
