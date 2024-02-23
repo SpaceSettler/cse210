@@ -74,7 +74,32 @@ class Program
         }
         if (response == "3")
         {
+            Address eAddresss1 = new Address("1280 Surrey Ln", "Holden", "Arizona", "USA");
+            Address eAddresss2 = new Address("640 S Myna St.", "Charleston", "Great Britain", "Russia");
+            Address eAddresss3 = new Address("113 Meadow glen dr", "Dover", "Wisconsin", "USA");
+            Lecture lecture = new Lecture("Bees and Altruism", "the fascinating life of the worlds hardest workers!", "March 28 2025", "6:00AM", eAddresss1, "Jimbo Jenkins", 19);
+            Reception reception = new Reception("Kyle and Jenny's Reception", "exiting new developments in the life of Kyle and Jenny!", "September 11 2001", "10:00AM", eAddresss2, "LennyLane82@yahoo.com");
+            Outdoor outdoor = new Outdoor("Picnic!", "a picnic in the park", "May 3 2011", "11:30AM", eAddresss3, "Sunny: 73F");
+            List<Event> events = new List<Event>();
+            events.Add(lecture); events.Add(reception); events.Add(outdoor);
+            foreach (Event e in events)
+            {
+                Console.WriteLine(e.GetType().Name);
+                Console.WriteLine($"You're invited to {e.ShortDescription()}!\n{e.FullDetails()}\n\n{e.StandardDetails()}\n\n");
+            }
 
+        }
+        if (response == "4")
+        {
+            Running run = new Running("Jan 3rd 2023", 34, 5);
+            Cycling cyc = new Cycling("Feb 23rd 2024", 101, 13.4);
+            Swimming swim = new Swimming("Dec 6th 2023", 6, 21);
+            List<Activity> activities = new List<Activity>();
+            activities.Add(run); activities.Add(cyc); activities.Add(swim);
+            foreach (Activity a in activities)
+            {
+                Console.WriteLine(a.GetSummary());
+            }
         }
     }
 }
